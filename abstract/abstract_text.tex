@@ -1,0 +1,31 @@
+\newpage
+\thispagestyle{empty}
+\begin{center}
+    \Huge\textbf{\abstract}
+\end{center}
+
+\abstractText
+\\
+\textbf{\keyword}: \keywordText
+
+\begin{flushright}
+    \begin{tabular}{c}
+        \abstractDate
+    \end{tabular}
+\end{flushright}
+
+\newpage
+\pagestyle{plain}
+\setcounter{page}{1}
+\pagenumbering{Roman}
+\tableofcontents
+
+\newpage
+\pagenumbering{arabic}
+\setcounter{chapter}{0}
+\setcounter{page}{1}
+
+\pagestyle{fancy}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0pt}
