@@ -151,9 +151,7 @@
 
 ## 2基本文件目录
 
-![image-20231226000057074](README.assets/image-20231226000057074.png)
-
-### 2.1配置文件
+### ![image-20231226000057074](README.assets/image-20231226000057074.png)2.1配置文件
 
 这是全局的配置文件，对应着config文件夹下的五个配置文件，分别是custom、format、package、theorem、config。
 
@@ -161,7 +159,7 @@
 
 **custom.tex**文件中配置的是一些自己顺手的宏定义。
 
-**format.tex**文件中配置了文章的格式如字体大小、行间距、列表格式等。
+**format.tex**文件中配置了文章的格式如字体大小、行间距、列表格式等。请注意： **\graphicspath**是图形文件搜索路径指令，不能使用通配符来进行路径的配置，默认为**\graphicspath{ {cover/figure/},{figure/}}**，若每书写一个新的章节，建议在路径后面添加**chap*/figure**，如**\graphicspath{ {cover/figure/},{figure/},{chap1/figure/}}**。
 
 **package.tex**文件中配置了需要引用的宏包。请注意：这里不能使用unicode-math宏包，不然重定义的\boldsymbol指令会失效，并且基于\mathbb的符号会出现不可预知的问题。
 
@@ -222,4 +220,4 @@ https://www.tablesgenerator.com/#
 
 ### 3.2多章节编译
 
-在**main.tex**中使用**xelatex -> bibtex -> xelatex*2**编译即可
+在**main.tex**中使用**xelatex -> bibtex -> xelatex*2**编译即可。若出现编译错误，请查看日志文件，并尝试删除中间文件\*.bbl及\*.synctex.gz文件重新进行编译。
