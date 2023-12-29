@@ -1,9 +1,0 @@
-\begin{thebibliography}{1}
-
-\bibitem{choy20194d}
-Christopher Choy, JunYoung Gwak, and Silvio Savarese.
-\newblock 4d spatio-temporal convnets: Minkowski convolutional neural networks.
-\newblock In {\em Proceedings of the IEEE/CVF conference on computer vision and
-  pattern recognition}, pages 3075--3084, 2019.
-
-\end{thebibliography}
