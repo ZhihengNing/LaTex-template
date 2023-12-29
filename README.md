@@ -159,7 +159,7 @@
 
 **custom.tex**文件中配置的是一些自己顺手的宏定义。
 
-**format.tex**文件中配置了文章的格式如字体大小、行间距、列表格式等。请注意： **\graphicspath**是图形文件搜索路径指令，不能使用通配符来进行路径的配置，默认为**\graphicspath{ {cover/figure/},{figure/}}**，若每书写一个新的章节，建议在路径后面添加**chap*/figure**，如**\graphicspath{ {cover/figure/},{figure/},{chap1/figure/}}**。
+**format.tex**文件中配置了文章的格式如字体大小、行间距、列表格式等。请注意： **\graphicspath**是图形文件搜索路径指令，不能使用通配符来进行路径的配置，默认为 **\graphicspath{ {cover/figure/},{figure/}}** ，若每书写一个新的章节，建议在路径后面添加 **chap*/figure** ，如 **\graphicspath{ {cover/figure/},{figure/},{chap1/figure/}}** 。
 
 **package.tex**文件中配置了需要引用的宏包。请注意：这里不能使用unicode-math宏包，不然重定义的\boldsymbol指令会失效，并且基于\mathbb的符号会出现不可预知的问题。
 
