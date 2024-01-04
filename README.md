@@ -223,3 +223,5 @@ https://www.tablesgenerator.com/#
 ### 3.2多章节编译
 
 在**main.tex**中使用**xelatex -> bibtex -> xelatex*2**编译即可。若出现编译错误，请查看日志文件，并尝试删除中间文件\*.bbl及\*.synctex.gz文件重新进行编译。
+
+若不存在文献引用只需要选择**xelatex*2**进行编译即可。
