@@ -1,0 +1,306 @@
+\def\allfiles{}
+\documentclass[12pt, a4paper, oneside]{ctexbook}
+\def\configPath{./config}
+\input{\configPath/config}
+\title{\heiti 武汉理工大学研究生考试试卷（A卷）}
+\renewcommand\thesection{\arabic {section}}
+\begin{document}
+
+\maketitle
+\section{填空题}
+\begin{enumerate}
+\item $\bs{A}^T$，$n-r$
+\item $\dim(\bs{V}_1+\bs{V}_2)=\dim(\bs{V}_1)+\dim(\bs{V}_2)-\dim(\bs{V}_1 \cap \bs{V}_2)=2+3-1=4$
+\item 先对矩阵进行$\rm{LR}$分解，
+$\bs{A}=\begin{pmatrix}
+    -1 & 0&1\\
+    1 & 2 & 0\\
+    -1 &0 &1
+\end{pmatrix}=\bs{L}\bs{R}=\begin{pmatrix}
+    1 & 0&0\\
+    -1 & 1 & 0\\
+    1 &0 &1
+\end{pmatrix}\begin{pmatrix}
+    -1 & 0&1\\
+    0 & 2 & 1\\
+    0 &0 &0
+\end{pmatrix}$
+
+接着对矩阵$\bs{L}$进行列分块$\bs{L}=[\bs{\alpha}_1,\bs{\alpha}_2,\bs{\alpha_3}]$，
+Schmidt正交化，得：
+
+$\bs{\beta}_1=\bs{\alpha}_1=[1,-1,1]^T,
+\bs{\beta}_2=\bs{\alpha}_2-\frac{(\bs{\alpha_2},\bs{\beta}_1)}{(\bs{\beta}_1,\bs{\beta}_1)} \bs{\beta}_1=\bs{\alpha}_2+\frac{1}{3}\bs{\beta}_1=[\frac{1}{3},\frac{2}{3},\frac{1}{3}]^T,
+\bs{\beta}_3=\bs{\alpha}_3-\frac{(\bs{\alpha_3},\bs{\beta}_2)}{(\bs{\beta}_2,\bs{\beta}_2)} \bs{\beta}_2
+-\frac{(\bs{\alpha_3},\bs{\beta}_1)}{(\bs{\beta}_1,\bs{\beta}_1)} \bs{\beta}_1
+=\bs{\alpha}_3 -\frac{1}{2}\bs{\beta}_2-\frac{1}{3}\bs{\beta}_1=[-\frac{1}{2},0,\frac{1}{2}]^T$
+
+对结果单位化，$[\bs{\gamma}_1,\bs{\gamma}_2,\bs{\gamma}_3]=
+[\frac{\bs{\beta}_1}{||\bs{\beta}_1||},\frac{\bs{\beta}_2}{{||\bs{\beta}_2||}},\frac{\bs{\beta}_3}{{||\bs{\beta}_3||}}]
+=[\frac{\bs{\beta}_1}{\sqrt{3}},\frac{\bs{\beta}_2}{{\sqrt{\frac{2}{3}}}},\frac{\bs{\beta}_3}{\sqrt{\frac{1}{2}}}]
+=\begin{pmatrix}
+   \frac{1}{\sqrt{3}}&\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}}\\
+   \frac{-1}{\sqrt{3}} &\frac{2}{\sqrt{6}} &0\\
+   \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}}
+\end{pmatrix}$
+
+
+于是，$[\bs{\alpha}_1,\bs{\alpha}_2,\bs{\alpha}_3]=
+[\bs{\gamma}_1,\bs{\gamma}_2,\bs{\gamma}_3]
+\begin{pmatrix}
+    \sqrt{3} & 0&0\\
+    0 & \sqrt{\frac{2}{3}} & 0\\
+    0 &0 &\sqrt{\frac{1}{2}}
+\end{pmatrix}
+\begin{pmatrix}
+    1 & -\frac{1}{3}&\frac{1}{3}\\
+    0 & 1 & \frac{1}{2} \\
+    0 & 0&1
+\end{pmatrix}$
+
+\begin{align*}
+\bs{L}\bs{R}&=
+\begin{pmatrix}
+    \frac{1}{\sqrt{3}}&\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}}\\
+    \frac{-1}{\sqrt{3}} &\frac{2}{\sqrt{6}} &0\\
+    \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix}
+ \begin{pmatrix}
+    \sqrt{3} & 0&0\\
+    0 & \sqrt{\frac{2}{3}} & 0\\
+    0 &0 &\sqrt{\frac{1}{2}}
+\end{pmatrix}
+\begin{pmatrix}
+    1 & -\frac{1}{3}&\frac{1}{3}\\
+    0 & 1 & \frac{1}{2} \\
+    0 & 0&1
+\end{pmatrix}
+\begin{pmatrix}
+    -1 & 0&1\\
+    0 & 2 & 1\\
+    0 &0 &0
+\end{pmatrix}\\
+&=
+\begin{pmatrix}
+    \frac{1}{\sqrt{3}}&\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}}\\
+    \frac{-1}{\sqrt{3}} &\frac{2}{\sqrt{6}} &0\\
+    \frac{1}{\sqrt{3}} &\frac{1}{\sqrt{6}} & -\frac{1}{\sqrt{2}}
+ \end{pmatrix}
+\begin{pmatrix}
+    -\sqrt{3} & -\frac{2}{\sqrt{3}} &\frac{2}{\sqrt{3}}\\
+    0 & \frac{2\sqrt{6}}{3} & \frac{\sqrt{6}}{3}\\
+    0 &0 &0
+\end{pmatrix}
+\end{align*}
+
+\item 3 ， 3 ，3
+\item $(\lambda-2)^3$
+\end{enumerate}
+
+\section{}
+\begin{enumerate}
+\item \begin{align*}
+|\lambda \bs{E}-\bs{A}|=\begin{vmatrix}
+    \lambda-3 &0 &-8 \\
+    -3 & 1+\lambda & -6 \\
+    2 &0 &\lambda +5
+\end{vmatrix}=(\lambda+1)^3
+\end{align*}
+所以特征值$\lambda_1=\lambda_2=\lambda_3=-1$
+
+行列式因子为$D_1=1,D_2=1+\lambda,D_3=(1+\lambda)^3$
+
+不变因子为$d_1=1,d_2=1+\lambda,d_3=(1+\lambda)^2$
+
+初等因子为$1+\lambda,(1+\lambda)^2$
+
+\item Jordan标准形
+$\bs{J}=\begin{pmatrix}
+    -1 & 0 & 0\\
+    0& -1 & 1 \\
+    0& 0 & -1
+\end{pmatrix}$，Smith标准形$\bs{S}=\begin{pmatrix}
+    1 & 0 & 0\\
+    0& 1+\lambda & 0 \\
+    0& 0 & (1+\lambda)^2
+\end{pmatrix}$
+
+\item 最小多项式$m_{\bs{A}}(\lambda)=(\lambda+1)^2$
+\end{enumerate}
+
+\section{}
+\begin{enumerate}
+\item 只需验证其满足乘法和加法的八条公理，并且对加法和数乘法封闭
+\item 由于存在$a_0,a_1,a_3$三个变量，自由度为3，则$\dim{(F[t]_3)}=3$，
+容易看出$(e_1,e_2,e_3)=(1,t,t^2)$构成了$F[t]_3$中的一组基。于是：
+\begin{align*}
+\mc{T}(e_1)&=2=2e_1 \\
+\mc{T}(e_2)&=1+2t=e_1+2e_2 \\
+\mc{T}(e_2)&=2t+2t^2=2e_2+2e_3
+\end{align*}
+即$\mc{T}(e_1,e_2,e_3)=(e_1,e_2,e_3)
+\begin{pmatrix}
+2 & 1 & 0 \\
+0 & 2 & 2 \\
+0 & 0 & 2      
+\end{pmatrix}$
+
+\item $\dim(\rm{Ker}\mc{T})=0$，所以其基为$\bs{0}$
+
+$\dim(\rm{Im}\mc{T})=3$，所以其基为$(2e_1,e_1+2e_2,2e_2+2e_3)$
+
+\end{enumerate}
+\section{}
+$\bs{A}-\lambda\bs{E}=\begin{pmatrix}
+3-\lambda& 0& 8 \\
+3& -1-\lambda& 6 \\
+-2& 0 &-5-\lambda
+\end{pmatrix}$
+
+特征值为$\lambda_1=\lambda_2=\lambda_3=-1$，
+由于其最小多项式$m_{\bs{A}}(\lambda)=(\lambda+1)^2$，
+不妨设$p(\lambda)=a_0+a_1\lambda$，可得下列方程组：
+\begin{align*}
+p(-1)&=a_0-a_1=e^{-t} \\
+p'(-1)&=a_1=te^{-t}
+\end{align*}
+解得$a_0=(t+1)e^{-t},a_1=te^{-t}$。则：
+
+$e^{\bs{A}t}=p(\bs{A})=
+(t+1)e^{-t}\bs{E}+te^{-t}\bs{A}=\begin{pmatrix}
+    (4t+1)e^{-t} & 0 & 8te^{-t} \\
+    3te^{-t} & te^{-t} & 6te^{-t} \\
+    -2te^{-t}& 0 &(1-4t)e^{-t}
+\end{pmatrix}    $
+
+微分方程的解为：
+
+$\bs{x}=e^{\bs{A}t}\bs{x}(0)+e^{\bs{A}t} \int_{0}^t e^{-\bs{A}u}\bs{b}(t)du
+=\begin{pmatrix}
+    (4t+1)e^{-t} & 0 & 8te^{-t} \\
+    3te^{-t} & te^{-t} & 6te^{-t} \\
+    -2te^{-t}& 0 &(1-4t)e^{-t}
+\end{pmatrix} \begin{pmatrix}
+    1 \\
+    0\\
+    0
+\end{pmatrix}=
+\begin{pmatrix}
+    (4t+1)e^{-t}  \\
+    3te^{-t}  \\
+    -2te^{-t}
+\end{pmatrix}$
+
+\section{}
+\begin{enumerate}
+\item 只需验证子空间$\bs{W}$对加法和数乘封闭。
+\item 显然，$\dim(\bs{W})=2$，
+则$\dim(\bs{W}^{\perp})=4-2=2$。
+
+取$\bs{e}_1=\frac{1}{\sqrt{3}}\begin{pmatrix}
+    -1 & 1\\
+    0 & 0
+\end{pmatrix},\bs{e}_2=\frac{1}{\sqrt{33}}\begin{pmatrix}
+    2 & 1\\
+    3 & 3
+\end{pmatrix}$，显然这构成了在$\bs{W}$上的标准正交基。
+
+取$\bs{e}_3=\frac{1}{\sqrt{10}}\begin{pmatrix}
+    2 & 1\\
+    -2 & 0
+\end{pmatrix},\bs{e}_4=\frac{1}{\sqrt{110}}\begin{pmatrix}
+    4 & 2\\
+    6 & -5
+\end{pmatrix}$，显然这构成了在$\bs{W}^{\perp}$上的标准正交基。
+\end{enumerate}
+
+\section{}
+\begin{enumerate}
+\item 
+\begin{align*}
+\bs{A}=\begin{pmatrix}
+    1& 0 &1 \\
+    0& 1 & 1\\
+    -2 & 0& -2
+\end{pmatrix}=\bs{B}\bs{C}=\begin{pmatrix}
+    1& 0  \\
+    0& 1 \\
+    -2 & 0
+\end{pmatrix}\begin{pmatrix}
+    1& 0  &1\\
+    0& 1 &1\\
+\end{pmatrix}
+\end{align*}
+
+\item  
+\begin{align*}
+    \bs{A}^+&=\bs{C}^T(\bs{C}\bs{C}^T)^{-1}(\bs{B}^T\bs{B})^{-1}\bs{B}^T \\
+    &=\begin{pmatrix}
+        1& 0  \\
+        0& 1 \\
+        1 & 1
+    \end{pmatrix}
+    \frac{1}{3}
+    \begin{pmatrix}
+        2& -1  \\
+        -1& 2 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        \frac{1}{5}& 0  \\
+        0& 1 \\
+    \end{pmatrix}
+    \begin{pmatrix}
+        1& 0 &-2 \\
+        0& 1 & 0\\
+    \end{pmatrix}\\
+    &=\begin{pmatrix}
+        \frac{2}{15}& -\frac{1}{3} &-\frac{4}{15} \\
+        -\frac{1}{15}& \frac{2}{3} & \frac{2}{15}\\
+        \frac{1}{15} & \frac{1}{3}& -\frac{2}{15}
+    \end{pmatrix}
+\end{align*}
+\item  若有解，则$\bs{x}_0=\bs{A}^+\bs{b}$显然是方程$\bs{A}\bs{x}=\bs{b}$的一个解，
+且必满足$\bs{A}\bs{A}^+\bs{b}=\bs{b}$，经验证，
+$\bs{A}\bs{A}^+\bs{b}=\bs{b}$这样的等式不成立，则$\bs{A}\bs{x}=\bs{b}$不相容。
+
+\item \begin{align*}
+\bs{x}&=\bs{A}^{+}\bs{b}+(\bs{E}-\bs{A}^+\bs{A})\bs{y}\\
+    &=\begin{pmatrix}
+        \frac{2}{15}& -\frac{1}{3} &-\frac{4}{15} \\
+        -\frac{1}{15}& \frac{2}{3} & \frac{2}{15}\\
+        \frac{1}{15} & \frac{1}{3}& -\frac{2}{15}
+    \end{pmatrix} \begin{pmatrix}
+        1 \\
+        2 \\
+        0
+    \end{pmatrix}+\begin{pmatrix}
+        \frac{1}{3}& \frac{1}{3} &-\frac{1}{3} \\
+        \frac{1}{3}& \frac{1}{3} & -\frac{1}{3}\\
+        -\frac{1}{3} & -\frac{1}{3}& \frac{1}{3}
+    \end{pmatrix} \begin{pmatrix}
+        y_1 \\
+        y_2 \\
+        y_3
+    \end{pmatrix}\\
+    &=\begin{pmatrix}
+        -\frac{8}{15}+\frac{1}{3}y_1+\frac{1}{3}y_2-\frac{1}{3}y_3 \\
+        \frac{19}{15}+\frac{1}{3}y_1 +\frac{1}{3}y_2-\frac{1}{3}y_3\\
+        \frac{11}{15}-\frac{1}{3}y_1 -\frac{1}{3}y_2 +\frac{1}{3}y_3
+    \end{pmatrix}
+\end{align*}
+其中$\bs{y}=[y_1,y_2,y_3]^T\in \R^3$。
+
+\item 极小范数二乘解为：
+\begin{align*}
+\bs{x}_0&=\bs{A}^{+}\bs{b}\\
+&=\begin{pmatrix}
+    -\frac{8}{15} \\
+    \frac{19}{15}\\
+    \frac{11}{15}
+\end{pmatrix}
+\end{align*}
+\end{enumerate}
+
+\bibliographystyle{plain}
+\bibliography{literature/literature}
+\end{document}

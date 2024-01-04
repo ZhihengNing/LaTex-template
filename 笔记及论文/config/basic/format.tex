@@ -1,0 +1,41 @@
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+% 图形文件搜索路径
+\graphicspath{ {cover/figure/},{figure/},{chap1/figure/},{chap2/figure/} }
+
+% 让\section标题靠左对齐
+\titleformat{\section}[block]{\normalfont\Large\bfseries}{\thesection}{1em}{}
+% 设置行距
+\linespread{1.6}
+
+\geometry{
+    top=25.4mm, 
+    bottom=25.4mm, 
+    left=20mm, 
+    right=20mm, 
+    headheight=2.17cm, 
+    headsep=4mm, 
+    footskip=12mm
+}
+% 设置列表环境
+\setenumerate[1]{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setitemize[1]{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+\setdescription{itemsep=5pt,partopsep=0pt,parsep=\parskip,topsep=5pt}
+
+\lstset{
+    language=Mathematica,
+    basicstyle=\tt,
+    breaklines=true,
+    keywordstyle=\bfseries\color{NavyBlue}, 
+    emphstyle=\bfseries\color{Rhodamine},
+    commentstyle=\itshape\color{black!50!white}, 
+    stringstyle=\bfseries\color{PineGreen!90!black},
+    columns=flexible,
+    numbers=left,
+    numberstyle=\footnotesize,
+    frame=tb,
+    breakatwhitespace=false,
+} 
