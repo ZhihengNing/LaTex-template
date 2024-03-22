@@ -1,0 +1,23 @@
+% 在这里定义自己顺手的环境
+\def\d{\mathrm{d}}
+\def\i{\mathrm{i}}
+\def\R{\mathbb{R}}
+\newcommand{\bs}[1]{\boldsymbol{#1}}
+\newcommand{\mc}[1]{\mathcal{#1}}
+\newcommand{\ora}[1]{\overrightarrow{#1}}
+% 几倍的垂直空白
+\newcommand{\myspace}[1]{\par\vspace{#1\baselineskip}}
+% 代表两个参数，其中第一个参数的默认值为0,增加高度用的
+\newcommand{\xrowht}[2][0]{\addstackgap[.5\dimexpr#2\relax]{\vphantom{#1}}}
+% 条件选择
+\newenvironment{ca}[1][1]{\linespread{#1} \selectfont \begin{cases}}{\end{cases}}
+% 行列式
+\newenvironment{vx}[1][1]{\linespread{#1} \selectfont \begin{vmatrix}}{\end{vmatrix}}
+
+\newcommand{\tabincell}[2]{\begin{tabular}{@{}#1@{}}#2\end{tabular}}
+% 双斜杠 //
+\newcommand{\pll}{\kern 0.56em/\kern -0.8em /\kern 0.56em}
+% divF
+\newcommand{\dive}[1][F]{\mathrm{div}\;\bs{#1}}
+% rotA
+\newcommand{\rotn}[1][A]{\mathrm{rot}\;\bs{#1}} 

@@ -1,0 +1,13 @@
+% 单章节要用article，不要用book！
+\documentclass[12pt, a4paper, oneside]{ctexart}
+\def\configPath{./config}
+\input{\configPath/config}
+\begin{document}
+
+\include{cover/cover}
+% \include{directory}
+\include{content}
+
+\bibliographystyle{plain}
+\bibliography{literature/literature}
+\end{document}

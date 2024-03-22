@@ -1,12 +1,12 @@
-\def\allfiles{}
-\documentclass[12pt, a4paper, oneside]{ctexbook}
-\def\configPath{./config}
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\configPath{../config}
 \input{\configPath/config}
-\title{\heiti 武汉理工大学研究生考试试卷（A卷）}
-\renewcommand\thesection{\arabic {section}}
-\begin{document}
 
-\maketitle
+\begin{document}
+\else
+\fi
+\chapter{矩阵论第一章作业}
 \section{填空题}
 \begin{enumerate}
 \item $\bs{A}^T$，$n-r$
@@ -97,7 +97,8 @@ $\bs{\beta}_1=\bs{\alpha}_1=[1,-1,1]^T,
 \item $(\lambda-2)^3$
 \end{enumerate}
 
-\section{}
+\section{解答题}
+\subsection{}
 \begin{enumerate}
 \item \begin{align*}
 |\lambda \bs{E}-\bs{A}|=\begin{vmatrix}
@@ -125,12 +126,12 @@ $\bs{J}=\begin{pmatrix}
     0& 0 & (1+\lambda)^2
 \end{pmatrix}$
 
-\item 最小多项式$m_{\bs{A}}(\lambda)=(\lambda+1)^2$
+\item 最小多项式$m_{\bs{A}}(\lambda)=(\lambda+1)^2$。
 \end{enumerate}
 
-\section{}
+\subsection{}
 \begin{enumerate}
-\item 只需验证其满足乘法和加法的八条公理，并且对加法和数乘法封闭
+\item 只需验证其满足乘法和加法的八条公理，并且对加法和数乘法封闭。
 \item 由于存在$a_0,a_1,a_3$三个变量，自由度为3，则$\dim{(F[t]_3)}=3$，
 容易看出$(e_1,e_2,e_3)=(1,t,t^2)$构成了$F[t]_3$中的一组基。于是：
 \begin{align*}
@@ -145,12 +146,12 @@ $\bs{J}=\begin{pmatrix}
 0 & 0 & 2      
 \end{pmatrix}$
 
-\item $\dim(\rm{Ker}\mc{T})=0$，所以其基为$\bs{0}$
+\item $\dim(\rm{Ker}\mc{T})=0$，所以其基为$0$。
 
-$\dim(\rm{Im}\mc{T})=3$，所以其基为$(2e_1,e_1+2e_2,2e_2+2e_3)$
+$\dim(\rm{Im}\mc{T})=3$，所以其基为$(2e_1,e_1+2e_2,2e_2+2e_3)$。
 
 \end{enumerate}
-\section{}
+\subsection{}
 $\bs{A}-\lambda\bs{E}=\begin{pmatrix}
 3-\lambda& 0& 8 \\
 3& -1-\lambda& 6 \\
@@ -191,7 +192,7 @@ $\bs{x}=e^{\bs{A}t}\bs{x}(0)+e^{\bs{A}t} \int_{0}^t e^{-\bs{A}u}\bs{b}(t)du
     -2te^{-t}
 \end{pmatrix}$
 
-\section{}
+\subsection{}
 \begin{enumerate}
 \item 只需验证子空间$\bs{W}$对加法和数乘封闭。
 \item 显然，$\dim(\bs{W})=2$，
@@ -214,7 +215,7 @@ $\bs{x}=e^{\bs{A}t}\bs{x}(0)+e^{\bs{A}t} \int_{0}^t e^{-\bs{A}u}\bs{b}(t)du
 \end{pmatrix}$，显然这构成了在$\bs{W}^{\perp}$上的标准正交基。
 \end{enumerate}
 
-\section{}
+\subsection{}
 \begin{enumerate}
 \item 
 \begin{align*}
@@ -301,6 +302,6 @@ $\bs{A}\bs{A}^+\bs{b}=\bs{b}$这样的等式不成立，则$\bs{A}\bs{x}=\bs{b}$
 \end{align*}
 \end{enumerate}
 
-\bibliographystyle{plain}
-\bibliography{literature/literature}
+\ifx\allfiles\undefined
 \end{document}
+\fi

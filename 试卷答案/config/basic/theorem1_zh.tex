@@ -1,0 +1,80 @@
+\usepackage[strict]{changepage} 
+\usepackage{framed}
+
+\definecolor{greenshade}{rgb}{0.90,1,0.92}
+\definecolor{redshade}{rgb}{1.00,0.88,0.88}
+\definecolor{brownshade}{rgb}{0.99,0.95,0.9}
+\definecolor{lilacshade}{rgb}{0.95,0.93,0.98}
+\definecolor{orangeshade}{rgb}{1.00,0.88,0.82}
+\definecolor{lightblueshade}{rgb}{0.8,0.92,1}
+\definecolor{purple}{rgb}{0.81,0.85,1}
+\theoremstyle{definition}
+
+% 这里的记忆方式为第一个大括号就是名称，第二个大括号是标识，即显示在pdf上的文字是什么，第三个就是与什么同步，
+%同步的意思就是，假设我与section同步，比如我这里section是1.1，那么我的同步第一个就是1.1.1，第二个就是1.1.2
+%假设我与chapter同步，比如我这里chapter是1，那么我的同步第一个就是1.1，第二个就是1.2
+% 写section的话就是与section同步
+\newtheorem{myDefn}{\indent 定义}[section]
+% 可以设置与section同步，这里我认为引理最好和section同步，如果是多章节的话与chapter同步也是可以的
+% \newtheorem{myLemma}{\indent 引理}[section]
+\newtheorem{myLemma}{\indent 引理}[section]
+\newtheorem{myThm}{\indent 定理}[myLemma]
+\newtheorem{myCorollary}{\indent 推论}[myLemma]
+\newtheorem{myCriterion}{\indent 准则}[myLemma]
+\newtheorem*{myRemark}{\indent 注}
+\newtheorem{myProposition}{\indent 命题}[section]
+\newtheorem{example}{\indent \color{SeaGreen}{例}}[section]
+\newtheorem{question}{\color{SeaGreen}{题}}[section]
+
+% 第一个大括号是环境名称，第二个中括号是参数个数，
+% 第三个中括号是首参数的默认值，第四个大括号是环境前定义，第五个大括号是环境后定义
+\newenvironment{formal}[2][]
+{%
+    \def\FrameCommand{%
+        \hspace{1pt}%
+        {\color{#1}\vrule width 2pt}%
+        {\color{#2}\vrule width 4pt}%
+        \colorbox{#2}%
+    }%
+    \MakeFramed{\advance\hsize-\width\FrameRestore}%
+    \noindent\hspace{-4.55pt}%
+    \begin{adjustwidth}{}{7pt}\vspace{2pt}\vspace{2pt}
+}
+{
+    \vspace{2pt}\end{adjustwidth}\endMakeFramed%
+}
+
+\newenvironment{defn}
+{\begin{formal}[Green]{greenshade}\vspace{-\baselineskip / 2}\begin{myDefn}}
+{\end{myDefn}\end{formal}}
+
+\newenvironment{thm}
+{\begin{formal}[LightSkyBlue]{lightblueshade}\vspace{-\baselineskip / 2}\begin{myThm}}
+{\end{myThm}\end{formal}}
+
+\newenvironment{lemma}
+{\begin{formal}[Plum]{lilacshade}\vspace{-\baselineskip / 2}\begin{myLemma}}
+{\end{myLemma}\end{formal}}
+
+\newenvironment{corollary}
+{\begin{formal}[BurlyWood]{brownshade}\vspace{-\baselineskip / 2}\begin{myCorollary}}
+{\end{myCorollary}\end{formal}}
+
+\newenvironment{criterion}
+{\begin{formal}[DarkOrange]{orangeshade}\vspace{-\baselineskip / 2}\begin{myCriterion}}
+{\end{myCriterion}\end{formal}}
+
+\newenvironment{rmk}
+{\begin{formal}[LightCoral]{redshade}\vspace{-\baselineskip / 2}\begin{myRemark}}
+{\end{myRemark}\end{formal}}
+
+\newenvironment{proposition}
+{\begin{formal}[RoyalPurple]{purple}\vspace{-\baselineskip / 2}\begin{myProposition}}
+{\end{myProposition}\end{formal}}
+
+
+% \renewenvironment{proof}{\indent\textcolor{SkyBlue}{\textbf{证明.}}\;}{\qed\par}
+% \newenvironment{solution}{\indent\textcolor{SkyBlue}{\textbf{解.}}\;}{\qed\par}
+
+\renewcommand{\proofname}{\textbf{\textcolor{TealBlue}{证明}}}
+\newenvironment{solution}{\begin{proof}[\textbf{\textcolor{TealBlue}{解}}]}{\end{proof}}
